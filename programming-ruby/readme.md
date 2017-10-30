@@ -1,1 +1,1 @@
-# Book &lt&ltProgramming Ruby&gt&gt.
+# Book 'Programming Ruby&gt'.
