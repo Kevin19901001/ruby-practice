@@ -22,6 +22,18 @@ class SongList
     @songs[index]
   end
 
+  # def with_title(title)
+  #   for i in (0..@songs.length)
+  #     return @songs[i] if title == @songs[i].name
+  #   end
+  #   return nil
+  # end
+
+  # Use Array#find:
+  def with_title(title)
+    @songs.find{|song| song.name == title}
+  end
+
 end
 
 class Song
