@@ -57,6 +57,7 @@ File.open("songdata") do |song_file|
   songs = SongList.new
   song_file.each do |line|
     file, length, name, title = line.chomp.split(/\s*\|\s*/)
+    # Use 'String#squeeze!(s)' to delete redundant blank:
     name.squeeze!(" ")
     songs.append(Song.new(title, name, length))
   end
