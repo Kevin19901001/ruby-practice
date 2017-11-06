@@ -94,7 +94,7 @@ File.open("songdata") do |song_file|
     # mins, secs = length.split(/:/)
 
     # Use 'String#scan" to split a string:
-    mins, secs = length.scan(/d+/)
+    mins, secs = length.scan(/\d+/)
 
     songs.append(Song.new(title, name, mins.to_i*60 + secs.to_i))
   end
