@@ -101,3 +101,19 @@ p "AM/PM is #$4"
 # match duplicated letter:
 p show_regexp('He said "Hello"', /(\w)\1/)	# He said "He<<ll>>o"
 p show_regexp("Mississippi", /(\w+)\1/)		# M<<ississ>>ippi
+
+
+# Use backward quotation to match the boundary symbol:
+puts show_regexp('He said "Hello"', /(["']).*?\1/)	# He said <<"Hello">>
+puts show_regexp("He said 'Hello'", /(["']).*?\1/)	# He said <<'Hello'>>
+
+
+# 'String#sub' and 'String#gsub':
+s = "the quick brown fox"
+puts s.sub(/[aeiou]/, "*")			# th* quick brown fox
+puts s.gsub(/[aeiou]/, "*")			# th* q**ck br*wn f*x
+puts s.sub(/\s\S+/, "")				# the brown fox
+puts s.gsub(/\s\S+/, "")			# the
+puts s.sub(/^./){|match| match.upcase}		# The quick brown fox
+puts s.gsub(/[aeiou]/){|vowel| vowel.upcase}	# thE qUIck brOwn fOx
+puts "fred:smith".sub(/(\w+):(\w+)/, '\2, \1')	# smith, fred. Why the single quote display a mess code, but single quote display the normal?
