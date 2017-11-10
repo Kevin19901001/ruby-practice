@@ -116,4 +116,4 @@ puts s.sub(/\s\S+/, "")				# the brown fox
 puts s.gsub(/\s\S+/, "")			# the
 puts s.sub(/^./){|match| match.upcase}		# The quick brown fox
 puts s.gsub(/[aeiou]/){|vowel| vowel.upcase}	# thE qUIck brOwn fOx
-puts "fred:smith".sub(/(\w+):(\w+)/, '\2, \1')	# smith, fred. Why the single quote display a mess code, but single quote display the normal?
+puts "fred:smith".sub(/(\w+):(\w+)/, '\2, \1')	# smith, fred. Why the double quote display a mess code, but single quote display the normal?
