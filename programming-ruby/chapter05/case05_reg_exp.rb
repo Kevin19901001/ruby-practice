@@ -117,3 +117,11 @@ puts s.gsub(/\s\S+/, "")			# the
 puts s.sub(/^./){|match| match.upcase}		# The quick brown fox
 puts s.gsub(/[aeiou]/){|vowel| vowel.upcase}	# thE qUIck brOwn fOx
 puts "fred:smith".sub(/(\w+):(\w+)/, '\2, \1')	# smith, fred. Why the double quote display a mess code, but single quote display the normal?
+
+
+# Upcase the first letter of a word:
+def mixed_case(name)
+  name.gsub(/\b\w/){|first| first.upcase}
+end
+p mixed_case("fats waller")
+p mixed_case("luois armstrong")
