@@ -55,3 +55,66 @@ end
 
 vf = VowelFinder.new("the quick brown fox jumped")
 puts vf.sum		# => euiooue
+
+
+# For 'mixin', it means that the module you would mix in  class will create instance variable in the class.
+module Observable
+
+  def observers
+    @observer_list ||= []
+  end
+
+  def add_to_observers(obj)
+    observers << obj
+  end
+
+  def notify_observers
+    observers.each{|o| o.update}
+  end
+
+end
+
+# Name conflict:
+class TelescopeScheduler
+
+  # Other classes can register to get notifications when the shcedule changes
+  include Observable
+
+  def initialize
+    @observer_list = []
+  end
+
+  def add_viewer(viewer)
+    @observer_list << viewer
+  end
+
+end
+
+
+# At most times, the 'mixin' modules does not bright their own instance data, they just use access methods to get data from customer objects. But if the 'mixin' you created has to have their own state, ensure the instance variable has the exclusive name to make it different from other 'mixin'. Or, use hash and use the ID of current object as index to save data.
+module Test
+
+  State = {}
+
+  def state=(value)
+    State[object_id] = value
+  end
+
+  def state
+    State[object_id]
+  end
+
+end
+
+class Client
+
+  include Test
+
+end
+
+c1 = Client.new
+c2 = Client.new
+c1.state = "dog"
+c2.state = "cat"
+puts c1.state
+puts c2.state
