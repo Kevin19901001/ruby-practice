@@ -25,3 +25,19 @@ end
 File.open("testfile") do |file|
   file.each_line{|line| puts "Got #{line.dump}"}
 end
+
+
+# IO.foreach:
+IO.foreach("testfile"){|line| puts line}
+
+
+# Read file content into a string or an array:
+# Read into a string:
+str = IO.read("testfile")
+p str.length			# 81
+p str[0, 30]			# where there is a river,\nthere 
+
+# Read into an array:
+arr = IO.readlines("testfile")
+p arr.length			# 4
+p arr[0]			# where there is a river
