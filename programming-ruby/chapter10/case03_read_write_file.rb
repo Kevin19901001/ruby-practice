@@ -41,3 +41,23 @@ p str[0, 30]			# where there is a river,\nthere
 arr = IO.readlines("testfile")
 p arr.length			# 4
 p arr[0]			# where there is a river
+
+
+# Write to files:
+# Use '<<' to add an object to IO output stream:
+end1 = "\n"
+puts STDOUT << 99 << " red balloons" << end1
+puts "\n".to_s
+
+
+# StringIO:
+require 'stringio'
+
+ip = StringIO.new("now is\nthe time\n to learn\nRuby!")
+op = StringIO.new("", "w")
+
+ip.each_line do |line|
+  op.puts line.reverse
+end
+
+op.string			# => "\nsi won\n\nemit eht\n\nnrael ot\n!ybuR\n"
