@@ -30,4 +30,33 @@ thrs.each{|t| t.join
 puts "count = #{count}"
 
 
+# If thread caused exception, what will hasppened? It depends on signal 'abort_on_exception' and signal 'interpreter debug'. If signal 'abort_on_exception' is 'false' and signal 'interpreter debug' has not been started, the exception would kill current thread simply, and the other threads goes on. In fact, except only when 'join' for the thread which caused the exception, you never knew the exception existed.
+ths = []
+4.times do |number|
+  ths << Thread.new(number) do |i|
+    raise "Bomb!" if i == 2
+    print "#{i}\n"
+  end
+end
+ths.each{|t|
+  # When the thread was joined, we can rescue the exception:
+  begin
+    t.join
+  rescue Exception => e
+    puts "Failed: #{e.message}"
+  end
+}
 
+
+# But, if the signal 'abort_on_exception' was setted as 'true' and the signal 'debug' has been opened, the exception would kill all running threads, since thread 2 exited, there would be no more outputs.
+Thread.abort_on_exception = true
+ts = []
+4.times do |number|
+  ts << Thread.new(number) do |i|
+    raise "Bomb!" if i == 2
+    puts "#{i}\n"
+  end
+end
+ts.each{|t|
+  t.join
+}
