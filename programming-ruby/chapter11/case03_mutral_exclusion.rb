@@ -54,3 +54,6 @@ t1.join
 t2.join
 
 puts c.count		# => 200000
+
+# For getting these benefits, it is unneccessary to inherit from class 'Monitor', we can include a mod
+# ule - MonitorMixin.
