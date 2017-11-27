@@ -24,7 +24,7 @@
 # t1.join
 # t2.join
 
-# puts c.count		# Perhaps ruby2.3 is different from ruby 1.8
+# puts c.count		# => 200000 (Perhaps ruby2.3 is different from ruby 1.8)
 
 
 # require 'monitor'
@@ -94,4 +94,25 @@ t2 = Thread.new{ 100000.times{ lock.synchronize{ c.tick } } }
 t1.join
 t2.join
 
-puts c.count
+puts c.count		# => 200000
+
+
+# Even, the specific object can be put in a monitor:
+# require 'monitor'
+
+# class Counter
+
+#   # as before
+
+# end
+
+# c = Counter.new
+# c.extend(MonitorMixin)
+
+# t1 = Thread.new{ 100000.times{ c.synchronize{ c.tick } } }
+# t1 = Thread.new{ 100000.times{ c.synchronize{ c.tick } } }
+
+# t1.join
+# t2.join
+
+# puts c.count		# => 200000
