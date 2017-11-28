@@ -21,8 +21,13 @@ class Roman
     roman = ""
     for code, factor in FACTORS
       count, value = value.divmod(factor)
-      roman << code unless count.zero?
+      p count
+      p value
+      p code
+      p "(code * count): " + (code * count)
+      roman << (code * count)
     end
+    p roman
     roman
   end
 
@@ -34,8 +39,11 @@ require 'test/unit'
 class TestRoman < Test::Unit::TestCase
 
   def test_simple
-    assert_equal("i",  Roman.new(1).to_s)
-    assert_equal("ix", Roman.new(9).to_s)
+    assert_equal("i",   Roman.new(1).to_s)
+    assert_equal("ii",  Roman.new(2).to_s)
+    assert_equal("iii", Roman.new(3).to_s)
+    assert_equal("iv",  Roman.new(4).to_s)
+    assert_equal("ix",  Roman.new(9).to_s)
   end
 
 end
@@ -53,4 +61,15 @@ end
 # 508.58 tests/s, 1017.16 assertions/s
 
 
+class TestRoman < Test::Unit::TestCase
 
+  NUMBERS = [[1, "i"], [2, "ii"], [3, "iii"], [4, "iv"], [5, "v"], [9, "ix"]]
+
+  def test_simple
+    NUMBERS.each do |arabic, roman|
+      r = Roman.new(arabic)
+      assert_equal(roman, r.to_s)
+    end
+  end
+
+end
