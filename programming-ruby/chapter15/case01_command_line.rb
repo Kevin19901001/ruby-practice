@@ -18,3 +18,19 @@ end
 # => [1, 1, 2, 3, 5, 8, 13]
 # irb(main):005:0> 
 
+
+# Tab completion:
+
+# irb(main):007:0> require 'irb/completion'
+# irb(main):010:0> class Test
+# irb(main):011:1>   def my_method
+# irb(main):012:2>   end
+# irb(main):013:1> end
+# => :my_method
+# irb(main):014:0> t = Test.new
+# => #<Test:0x00000001426e08>
+# irb(main):015:0> t.m
+# t.method     t.methods    t.my_method  
+# irb(main):015:0> t.m
+# t.method     t.methods    t.my_method  
+# irb(main):015:0> t.my_method
