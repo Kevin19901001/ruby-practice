@@ -34,3 +34,42 @@ end
 # irb(main):015:0> t.m
 # t.method     t.methods    t.my_method  
 # irb(main):015:0> t.my_method
+
+
+# Subsessions:
+# irb(main):001:0> require_relative 'case01_command_line.rb'
+# => true
+# irb(main):002:0> result = []
+# => []
+# irb(main):003:0> fib_up_to(10){ |val| result << val }
+# => nil
+# irb(main):004:0> result
+# => [1, 1, 2, 3, 5, 8]
+# irb(main):005:0> # Create a nested irb session
+# irb(main):006:0* irb
+# irb#1(main):001:0> result = %w{ cat dog horse }
+# => ["cat", "dog", "horse"]
+# irb#1(main):002:0> result.map{ |val| val.upcase }
+# => ["CAT", "DOG", "HORSE"]
+# irb#1(main):003:0> jobs
+# => #0->irb on main (#<Thread:0x00000001c7e1a0>: stop)
+# #1->irb#1 on main (#<Thread:0x00000001e87190>: running)
+# irb#1(main):004:0> fg 0
+# => #<IRB::Irb: @context=#<IRB::Context:0x00000001e82118>, @signal_status=:IN_EVAL, @scanner=#<RubyLex:0x00000001e73988>>
+# irb(main):007:0> jobs
+# => #0->irb on main (#<Thread:0x00000001c7e1a0>: running)
+# #1->irb#1 on main (#<Thread:0x00000001e87190>: stop)
+# irb(main):008:0> fg 1
+# => #<IRB::Irb: @context=#<IRB::Context:0x00000001e87028>, @signal_status=:IN_EVAL, @scanner=#<RubyLex:0x00000001e86c18>>
+# irb#1(main):005:0> jobs
+# => #0->irb on main (#<Thread:0x00000001c7e1a0>: stop)
+# #1->irb#1 on main (#<Thread:0x00000001e87190>: running)
+# irb#1(main):006:0> fg 0
+# => #<IRB::Irb: @context=#<IRB::Context:0x00000001e82118>, @signal_status=:IN_EVAL, @scanner=#<RubyLex:0x00000001e73988>>
+# irb(main):009:0> result
+# => [1, 1, 2, 3, 5, 8]
+# irb(main):010:0> fg 1
+# => #<IRB::Irb: @context=#<IRB::Context:0x00000001e87028>, @signal_status=:IN_EVAL, @scanner=#<RubyLex:0x00000001e86c18>>
+# irb#1(main):007:0> result
+# => ["cat", "dog", "horse"]
+# irb#1(main):008:0> 
