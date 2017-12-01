@@ -73,3 +73,28 @@ end
 # irb#1(main):007:0> result
 # => ["cat", "dog", "horse"]
 # irb#1(main):008:0> 
+
+
+# Subsessions and bindings:
+# irb#1(main):008:0> self
+# => main
+# irb#1(main):009:0> irb "wombat"
+# irb#2(wombat):001:0> self
+# => "wombat"
+# irb#2(wombat):002:0> upcase
+# => "WOMBAT"
+# irb#2(wombat):003:0> size
+# => 6
+# irb#2(wombat):004:0> gsub(/[aeiou]/, "*")
+# => "w*mb*t"
+# irb#2(wombat):005:0> irb_exit
+# => #<IRB::Irb: @context=#<IRB::Context:0x00000001e87028>, @signal_status=:IN_EVAL, @scanner=#<RubyLex:0x00000001e86c18>>
+# irb#1(main):010:0> self
+# => main
+# irb#1(main):011:0> jobs
+# => #0->irb on main (#<Thread:0x00000001c7e1a0>: stop)
+# #1->irb#1 on main (#<Thread:0x00000001e87190>: running)
+# irb#1(main):012:0> upcase
+# NameError: undefined local variable or method `upcase' for main:Object
+# 	from (irb#1):12
+# irb#1(main):013:0> 
