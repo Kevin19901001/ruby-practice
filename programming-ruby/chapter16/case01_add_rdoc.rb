@@ -38,4 +38,15 @@ class Shape
 
   end
 
+  # Mark up
+  # <tt>--output</tt> <i>name [, name]</i>::
+  #     specify the name of one or more output files. If multiple
+  #     files are present, the first was uses as index.
+  # <tt>--quiet:</tt>::  do not output the names, sizes, byte counts,
+  #                      index areas, or bit ratios of units as
+  #                      they are processed.
+  def mark_up
+
+  end
+
 end
