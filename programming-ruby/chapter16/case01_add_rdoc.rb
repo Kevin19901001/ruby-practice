@@ -49,4 +49,12 @@ class Shape
 
   end
 
+  # Headings:
+  # = Level one heading
+  # == Level two heading
+  # and so on...
+  def title
+    
+  end
+
 end
