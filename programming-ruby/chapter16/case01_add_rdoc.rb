@@ -57,4 +57,12 @@ class Shape
     
   end
 
+  # three or more '-' presents level:
+  # and so it goes...
+  # ---
+  # The next section...
+  def level
+
+  end
+
 end
