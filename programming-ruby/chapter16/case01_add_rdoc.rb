@@ -76,3 +76,12 @@ class Shape
   end
 
 end
+
+
+module SM #:nodoc
+
+  class Input
+    
+  end
+
+end
