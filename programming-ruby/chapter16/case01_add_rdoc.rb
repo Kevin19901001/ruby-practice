@@ -78,10 +78,21 @@ class Shape
 end
 
 
-module SM #:nodoc
+# :nodoc:[all]
+module SM #:nodoc:
 
   class Input
     
+  end
+
+end
+
+
+# :nodoc:[all]
+module Markup # :nodoc: all
+
+  class Output
+
   end
 
 end
