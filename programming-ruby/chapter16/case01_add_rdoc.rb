@@ -70,4 +70,9 @@ class Shape
     yield line, address
   end
 
+  # :yields
+  def red	#:yields: index, position
+    yield line, address
+  end
+
 end
