@@ -65,4 +65,9 @@ class Shape
 
   end
 
+  # Documentation modifiers:
+  def fred
+    yield line, address
+  end
+
 end
