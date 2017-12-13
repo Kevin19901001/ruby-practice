@@ -21,3 +21,12 @@ puts doc.to_html
 
 
 # Dependent on rubygems:
+begin
+
+  require 'BlueCloth' ">=0.0.4"
+
+rescue
+
+  require 'bluecloth'
+
+end
