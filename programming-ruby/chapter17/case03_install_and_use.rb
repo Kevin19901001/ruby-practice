@@ -18,3 +18,6 @@ doc = BlueCloth::new <<MARKUP
   [1]: http://ruby-lang.org
 MARKUP
 puts doc.to_html
+
+
+# Dependent on rubygems:
