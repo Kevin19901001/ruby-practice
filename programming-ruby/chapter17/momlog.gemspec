@@ -1,15 +1,3 @@
-# Creating your own gems
-# 1. Package layout:
-# The first of all for creating gem is to orgnize code in a significative directory structure.
-# Puts all ruby resource code in the 'lib/' sub directory.
-# A readme file is always needed.
-# Test cases should be put in the 'test/' directory.
-# Any runable script should be put in the 'bin' sub directory.
-# Ruby extension ruby source code should be put in 'ext/' directory.
-# If gem includes many docs, the docs should be put in the 'docs/' directory.
-
-
-# 2. The gem specification:
 SPEC = Gem::Specification.new do |s|
 
   s.name             = "MomLOg"
@@ -31,9 +19,3 @@ SPEC = Gem::Specification.new do |s|
   s.add_dependency("BlueCloth", ">=0.0.4")
 
 end
-
-
-# 7. Building the gem file:
-# Two commands could do that:
-# ruby momlog.gemspec
-# gem build momlog.gemspec
