@@ -16,14 +16,21 @@
 # egg:
 # Ruby standard library directory                  => rubylibdir
 # Ruby command toll                                => bindir
-# Specific architecture extension and lib files    => arcdir
+# Specific architecture extension and lib files    => archdir
 # Extension and lib files of user or third-party   => sitedir
 # Extemsion and lib files of third-party           => vendordin
 # Ruby language extension od user(written by Ruby) => sitlibdir
-# Ruby language extension of user(written by C)    => sitearcdir
+# Ruby language extension of user(written by C)    => sitearchdir
 
 
 # egg: Ruby standard library sub directory:
-# >>RbConfig::CONFIG["rubylibdir"]
+# >> RbConfig::CONFIG["rubylibdir"]
 # In the rubylibdir, there are program files written by Ruby. These files supply function of standard lira
 # ry, if these function were needed, require them in program.
+
+# egg: C language extension directory:
+# >> RbConfig::CONFIG["archdir"]
+
+# egg: ruby_site and vendor_ruby directory:
+# >> RbConfig::CONFIG["sitedir"]
+# >> RbConfig::CONFIG["vendordir"]
