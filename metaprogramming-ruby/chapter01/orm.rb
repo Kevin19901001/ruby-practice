@@ -36,4 +36,12 @@ class Movie < Entity
     set "title", value
   end
 
+  def director
+    get "director"
+  end
+
+  def director=(value)
+    set "director", value
+  end
+
 end
