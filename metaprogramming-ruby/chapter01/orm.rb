@@ -18,3 +18,22 @@ class Entity
   end
 
 end
+
+
+# Bob could inherit from class 'Entity' to map a specific table. For example, using class 'Movie' to map
+# a table named 'movies':
+class Movie < Entity
+
+  def initialize(ident)
+    super "movies", ident
+  end
+
+  def title
+    get "title"
+  end
+
+  def title=(value)
+    set "title", value
+  end
+
+end
