@@ -45,3 +45,7 @@ class Movie < Entity
   end
 
 end
+
+movie = Movie.new(1)
+movie.title = "Doctor Strange Love"
+movie.director = "Stanley Kubrick"
