@@ -49,3 +49,12 @@ end
 movie = Movie.new(1)
 movie.title = "Doctor Strange Love"
 movie.director = "Stanley Kubrick"
+
+
+# But just inherit from ActiveRecord::Base, many codes are unneeded.
+class Movie < ActiveRecord::Base
+
+end
+movie = Movie.create
+movie.title = "Doctor Strangelove"
+movie.director			# => "Doctor Strangelove"
