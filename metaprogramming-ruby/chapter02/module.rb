@@ -13,3 +13,17 @@ module M
 end
 
 p M.constants
+
+
+# Moduke.nesting
+module M
+
+  class C
+  
+    module M2
+      p Module.nesting
+    end
+
+  end
+
+end
