@@ -13,3 +13,5 @@ end
 
 obj = MySubClass.new
 p obj.my_method
+
+p MySubClass.ancestors
