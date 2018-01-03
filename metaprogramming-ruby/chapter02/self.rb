@@ -14,3 +14,4 @@ end
 
 obj = MyClass.new
 obj.testing_self
+p obj
