@@ -25,4 +25,8 @@ class  Computer
     result
   end
 
+  def respnd_to_missing(method, include_private = true)
+    @data_source.respond_to("get_#{method}_info") || super
+  end
+
 end
