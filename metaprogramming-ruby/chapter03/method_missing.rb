@@ -2,7 +2,7 @@ class Lawyer
 
 end
 
-nick = Lawyer.new
+# nick = Lawyer.new
 # nick.talk_simple
 
 # method_missing function:
