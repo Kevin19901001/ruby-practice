@@ -2,4 +2,8 @@ require 'test/unit'
 require_relative 'with'
 
 # test 'with':
-class
+class TestWith < Test::Unit::TestCase
+
+
+
+end
