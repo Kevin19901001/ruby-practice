@@ -6,4 +6,6 @@ class TestWith < Test::Unit::TestCase
 
   def
 
+  end
+
 end
