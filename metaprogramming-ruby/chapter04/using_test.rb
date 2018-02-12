@@ -12,4 +12,6 @@ class TestWith < Test::Unit::TestCase
 
   end
 
+  def
+
 end
