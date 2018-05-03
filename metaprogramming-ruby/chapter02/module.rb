@@ -15,7 +15,7 @@ end
 p M.constants
 
 
-# Moduke.nesting
+# Module.nesting
 module M
 
   class C
